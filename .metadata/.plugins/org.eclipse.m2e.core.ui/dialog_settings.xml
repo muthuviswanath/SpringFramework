@@ -57,6 +57,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="SetterInjectionDependentObject"/>
 			<item value="CIusingMap"/>
 			<item value="CIwithList"/>
 			<item value="SpringApp"/>

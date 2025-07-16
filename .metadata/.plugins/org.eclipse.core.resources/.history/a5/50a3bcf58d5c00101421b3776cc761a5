@@ -1,7 +1,0 @@
-
-public class Basics {
-//Register the driver
-	// connection string
-	//"oracle.jdbc.driver.OracleDriver
-	Class.forName("oracle.jdbc.driver.OracleDriver");
-}
