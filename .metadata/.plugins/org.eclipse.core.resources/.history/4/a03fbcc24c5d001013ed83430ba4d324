@@ -1,0 +1,28 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class SelectWithWhereClause {
+	
+	public void createRecords(String tableName, )
+	public static void main(String[] args) throws Exception{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter your filter:");
+		int filter = s.nextInt();
+		Connection c = JdbcUtil.getConnection();
+		String sql = "SELECT * FROM EMPLOYEES WHERE DEPT_ID = ?";
+		PreparedStatement stmt = c.prepareStatement(sql);
+		stmt.setInt(1, filter);
+		ResultSet r = stmt.executeQuery();
+		while(r.next()) {
+			System.out.println(r.getInt("EMP_ID") +"\t" 
+								+ r.getString("EMP_NAME")+ "\t"
+								+ r.getInt("SALARY")+ "\t"
+								+r.getInt("DEPT_ID")+"\t"
+								+r.getInt("MANAGER_ID")
+								);
+		}
+	}
+}

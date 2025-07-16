@@ -1,0 +1,14 @@
+
+public class Employees {
+	int EMP_ID;
+	String EMP_NAME;
+	int salary;
+	int Department_ID;
+	int manager_id;
+	public Employees(int emp_id, String emp_name, int salary, int department_id, int manager_id) {
+		this.EMP_ID = emp_id;
+		this.EMP_NAME = emp_name;
+		this.salary = salary;
+		this.Department_ID = department_id;
+		this.manager_id = manager_id;
+	}

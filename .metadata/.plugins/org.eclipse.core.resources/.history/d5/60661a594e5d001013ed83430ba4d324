@@ -1,0 +1,36 @@
+import java.sql.Connection;
+import java.util.Scanner;
+
+public class EmployeeCrud {
+	static Connection con = null;
+	public static void addEmployee(Employees emp) {
+
+	}
+
+	public void updateEmployee(Employees emp) {
+
+	}
+
+	public void deleteEmployee(Employees emp) {
+
+	}
+
+	public Employees getEmployee(Employees emp) {
+	}
+	
+	public static void main(String[] args) throws Exception {
+		con = JdbcUtil.getConnection();
+		Scanner scan = new Scanner(System.in);
+		Employees emp = new Employees();
+		do {
+			System.out.println("1. Create Employee");
+			System.out.println("2. Update Employee");
+			System.out.println("3. Delete Employee");
+			System.out.println("4. Get Employee");
+			System.out.println("5. Exit");
+			System.out.println("Enter your choice: ");
+			int choice = scan.nextInt();
+		}
+		addEmployee(emp);
+	}
+}

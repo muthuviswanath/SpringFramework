@@ -1,0 +1,14 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class BatchProcessing {
+
+	public static void main(String[] args) throws Exception{
+		Connection con = JdbcUtil.getConnection();
+		con.setAutoCommit(false);
+		String query = "INSERT INTO BOOKS"
+				+ "(BOOK_ID, TITLE, AUTHOR, PRICE, AVAILABLE_STOCK)"
+				+ "VALUES (?, ?, ?, ?, ?)";
+		PreparedStatement pstmt = con.prepareStatement(query);
+	}
+}

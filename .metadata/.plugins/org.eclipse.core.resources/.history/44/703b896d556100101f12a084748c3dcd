@@ -1,0 +1,21 @@
+package com.bitbrains;
+
+import java.util.Map;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class CourseList {
+
+	private final Map<String,Trainer> catalog;
+
+	public CourseList(Map<String, Trainer> catalog) {
+		this.catalog = catalog;
+	}
+	
+	public void displayCourseCatalog() {
+		System.out.println("Course Catalog");
+		catalog.forEach((course, trainer) ->
+		System.out.println("Course: " + course +" is handled by " + trainer.getTrainerName()));
+	}
+}

@@ -1,0 +1,25 @@
+package com.bitbrains;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan(basePackages = "com.bitbrains")
+public class AppConfig {
+	
+	@Bean
+	public List<String> courseList(){
+		List l = new ArrayList<String>();
+		l.add("Java");
+		l.add("HTML/CSS/JavaScript");
+		l.add("Spring");
+		l.add("SQL");
+		l.add("Versioning");
+		
+	}
+
+}

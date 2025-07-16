@@ -1,0 +1,15 @@
+package com.bitbrans;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Participants {
+
+	private final Course course = null;
+	
+	public Participants(Course couyrse) {
+		this.course = course;
+	}
+	
+	
+}

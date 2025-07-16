@@ -1,0 +1,43 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class Basics {
+	//Register the driver
+	// connection string
+	//"oracle.jdbc.driver.OracleDriver
+	public static void main(String[] args) throws Exception {
+		//Registering the Driver
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+
+
+		//Initialize the connection interface using the DriverManager's 
+		// getConnection()
+
+		Connection c = DriverManager.getConnection(
+				"jdbc:oracle:thin:@localhost:1521:orcl", 
+				"scott", 
+				"tiger");
+
+		//Statement Preparation
+		Statement stmt = c.createStatement();
+
+
+		//Execute the SQL statement and store it in ResultSet
+		ResultSet r = stmt.executeQuery("SELECT * FROM dept");
+		System.out.println(String.format("%s","DeptNo")+
+				String.format("%-5s", "Department Name")
+		+String.format("%-10s", "Location"));	
+		while(r.next()) {
+			System.out.println(r.getInt(1)+
+					String.format("%-5s", r.getString(2))
+			+String.format("%-10s", r));
+			
+		}
+		c.close();
+
+	}  
+}  
+
+

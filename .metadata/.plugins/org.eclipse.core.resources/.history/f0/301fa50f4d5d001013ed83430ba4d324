@@ -1,0 +1,8 @@
+
+public class Employees {
+	private int EMP_ID;
+	private String EMP_NAME;
+	private int salary;
+	private int Department_ID;
+	private int manager_id;
+}

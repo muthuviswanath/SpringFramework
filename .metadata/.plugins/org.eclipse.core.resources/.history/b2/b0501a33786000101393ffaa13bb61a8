@@ -1,0 +1,7 @@
+
+public class ZomatoOrder {
+
+	public ZomatoOrder() {
+		// TODO Auto-generated constructor stub
+	}
+}

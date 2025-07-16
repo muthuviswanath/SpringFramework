@@ -1,0 +1,19 @@
+package com.bitbrans;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+
+	@Bean
+	public PaymentServices paymentServices() {
+		return new PaymentServices();
+	}
+	
+	@Bean
+	public OrderService orderService() {
+		return new OrderService(paymentServices());
+	}
+	//AnnotationConfigApplicationContext
+}

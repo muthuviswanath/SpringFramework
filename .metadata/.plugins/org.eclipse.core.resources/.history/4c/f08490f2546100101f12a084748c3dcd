@@ -1,0 +1,8 @@
+package com.bitbrains;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class CourseList {
+
+}

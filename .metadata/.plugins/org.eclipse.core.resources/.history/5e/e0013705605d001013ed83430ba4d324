@@ -1,0 +1,53 @@
+import java.sql.*;
+import java.util.Scanner;
+
+public class NewEmp {
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+
+        // Collect input from user
+        System.out.print("Enter Employee ID: ");
+        int empId = scanner.nextInt();
+        scanner.nextLine(); // flush
+
+        System.out.print("Enter Employee Name: ");
+        String empName = scanner.nextLine();
+
+        System.out.print("Enter Salary: ");
+        double salary = scanner.nextDouble();
+
+        System.out.print("Enter Department ID: ");
+        int deptId = scanner.nextInt();
+
+        System.out.print("Enter Manager ID: ");
+        int managerId = scanner.nextInt();
+        
+
+        // JDBC connection
+        Connection conn = JdbcUtil.getConnection();
+
+        // Prepare SQL INSERT statement
+        String sql = "INSERT INTO EMPLOYEES (EMP_ID, EMP_NAME, SALARY, DEPT_ID, MANAGER_ID) VALUES (?, ?, ?, ?, ?)";
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+
+
+        pstmt.setInt(1, empId);
+        pstmt.setString(2, empName);
+        pstmt.setDouble(3, salary);
+        pstmt.setInt(4, deptId);
+        pstmt.setObject(5, managerId); 
+
+        // Execute the insert
+        int rows = pstmt.executeUpdate();
+        if (rows > 0) {
+            System.out.println("Employee inserted successfully.");
+        } else {
+            System.out.println("Insert failed.");
+        }
+
+        // Clean up
+        pstmt.close();
+        conn.close();
+        scanner.close();
+    }
+}

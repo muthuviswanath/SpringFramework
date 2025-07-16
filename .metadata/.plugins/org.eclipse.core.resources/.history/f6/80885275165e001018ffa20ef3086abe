@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class StoredProcedure {
+	static int bookId;
+	static double price;
+	public static void main(String[] args) throws Exception {
+		 Scanner scan = new Scanner(System.in);
+		 System.out.println("Enter Book Id:");
+		 bookId = scan.nextInt();
+		 System.out.println("Enter Book Price:");
+		 price = scan.nextDouble();
+		 JdbcUtil.getConnection();
+	}
+}

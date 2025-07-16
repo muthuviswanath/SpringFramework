@@ -1,0 +1,7 @@
+
+public class DBOperations {
+
+	static void save() {
+		
+	}
+}

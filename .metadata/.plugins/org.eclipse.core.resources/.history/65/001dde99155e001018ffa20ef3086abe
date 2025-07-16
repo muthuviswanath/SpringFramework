@@ -1,0 +1,8 @@
+
+public class StoredProcedure {
+	int bookId;
+	double price;
+	public static void main(String[] args) {
+		 
+	}
+}

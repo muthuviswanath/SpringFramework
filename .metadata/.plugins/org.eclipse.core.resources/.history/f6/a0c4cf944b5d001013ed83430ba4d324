@@ -1,0 +1,21 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class SelectWithWhereClause {
+	public static void main(String[] args) throws Exception{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter your filter:");
+		int filter = s.nextInt();
+		Connection c = JdbcUtil.getConnection();
+		Statement stmt = c.createStatement();
+		String sql = "SELECT * FROM dept WHERE DEPTNO = " + filter;
+		ResultSet r = stmt.executeQuery(sql);
+		while(r.next()) {
+			System.out.println(r.getInt("DEPTNO") + 
+					String.format("%-5s", r.getString("DNAME")) + 
+					String.format("%-10s", r.getString("LOC")));
+		}
+	}
+}

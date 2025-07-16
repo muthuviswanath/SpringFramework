@@ -1,0 +1,9 @@
+package com.bitbrains;
+
+public class Trainer {
+	private String trainerName;
+
+	public Trainer(String trainerName) {
+		this.trainerName = trainerName;
+	}
+}

@@ -1,0 +1,15 @@
+package com.bitbrans;
+
+public class OrderService {
+
+	private PaymentServices paymentService;
+	
+	public OrderService(PaymentServices paymentService)
+	{
+		this.paymentService = paymentService;
+	}
+	
+	public void placeOrder() {
+		paymentService.pay();
+	}
+}

@@ -1,0 +1,6 @@
+
+public class PaymentService {
+public void pay() {
+	System.out.println("Payment Processing using PhonePay");
+}
+}

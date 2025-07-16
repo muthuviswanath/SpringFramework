@@ -1,0 +1,24 @@
+import java.sql.Connection;
+
+public class EmployeeCrud {
+	static Connection con = null;
+	public void addEmployee(Employees emp) {
+
+	}
+
+	public void updateEmployee(Employees emp) {
+
+	}
+
+	public void deleteEmployee(Employees emp) {
+
+	}
+
+	public Employees getEmployee(Employees emp) {
+	}
+	
+	public static void main(String[] args) {
+		con = JdbcUtil.getConnection();
+		Employees emp = new Employees();
+	}
+}

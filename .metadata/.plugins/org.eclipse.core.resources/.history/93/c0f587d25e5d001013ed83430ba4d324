@@ -1,0 +1,29 @@
+import java.sql.Connection;
+import java.util.Scanner;
+
+public class EmployeeCreate {
+public static void main(String[] args) throws Exception{
+	Connection con = JdbcUtil.getConnection();
+	Scanner scan = new Scanner(System.in);
+	System.out.println( "Enter Employee Id:");
+	int empId = scan.nextInt();
+	System.out.println("Enter Employee Name:");
+	scan.nextLine(); // Consume the newline character left by nextInt()
+	String empName = scan.nextLine();
+	System.out.println("Enter Employee Salary:");
+	int empSalary = scan.nextInt();
+	System.out.println("Enter Employee Department Id:");
+	int empDeptId = scan.nextInt();
+	System.out.println("Enter Employee Manager Id:");
+	int mgr_id = scan.nextInt();
+	
+	Employees emp = new Employees();
+	emp.setEMP_ID(empId);
+	emp.setEMP_NAME(empName);
+	emp.setSalary(empSalary);
+	emp.setDepartment_ID(empDeptId);
+	emp.setManager_id(mgr_id);
+	EmployeeCrud.addEmployee(emp);
+	
+} 
+}

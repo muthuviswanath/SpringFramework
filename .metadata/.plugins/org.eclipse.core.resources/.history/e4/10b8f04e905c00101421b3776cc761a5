@@ -1,0 +1,9 @@
+
+public class Basics {
+//Register the driver
+	// connection string
+	//"oracle.jdbc.driver.OracleDriver
+	public static void main(String[] args) throws Exception {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+	}
+}
